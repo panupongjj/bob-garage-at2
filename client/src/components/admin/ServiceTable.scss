@@ -1,0 +1,155 @@
+@use '../../styles/variables' as *;
+
+.service-table {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+
+  &__add-button {
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: var(--accent-hover);
+    }
+  }
+
+  &__loading,
+  &__empty {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+  }
+
+  &__container {
+    overflow-x: auto;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 2px;
+    overflow: hidden;
+
+    th,
+    td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+      background-color: #000000;
+      font-weight: 700;
+      color: var(--accent-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.875rem;
+    }
+
+    td {
+      color: var(--text-primary);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover {
+      background-color: var(--bg-tertiary);
+    }
+  }
+
+  &__image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 2px;
+    border: 2px solid var(--border-color);
+  }
+
+  &__no-image {
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+
+  &__description {
+    max-width: 300px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.75rem;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+
+    &--edit {
+      background-color: var(--accent-color);
+      color: white;
+
+      &:hover {
+        background-color: var(--accent-hover);
+      }
+    }
+
+    &--delete {
+      background-color: var(--error-color);
+      color: white;
+
+      &:hover {
+        background-color: var(--error-hover);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__table {
+      font-size: 0.875rem;
+    }
+
+    &__image {
+      width: 60px;
+      height: 60px;
+    }
+
+    &__description {
+      max-width: 150px;
+    }
+  }
+}
+

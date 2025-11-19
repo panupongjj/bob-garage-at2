@@ -1,0 +1,96 @@
+@use '../../styles/variables' as *;
+
+.admin-sidebar {
+  width: 250px;
+  background-color: #000000;
+  border-right: 2px solid var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+
+  &__header {
+    padding: 2rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  &__title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    color: var(--accent-secondary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  &__user {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #cccccc;
+  }
+
+  &__nav {
+    flex: 1;
+    padding: 1rem 0;
+  }
+
+  &__nav-item {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    color: #cccccc;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+
+    &:hover {
+      background-color: var(--bg-tertiary);
+      color: white;
+    }
+
+    &.active {
+      background-color: var(--bg-tertiary);
+      border-left-color: var(--accent-color);
+      color: var(--accent-secondary);
+      font-weight: 700;
+    }
+  }
+
+  &__footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+  }
+
+  &__logout {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--error-color);
+    color: white;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: 0.875rem;
+
+    &:hover {
+      background-color: var(--error-hover);
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+}
+

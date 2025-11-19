@@ -1,0 +1,136 @@
+@use '../styles/variables' as *;
+
+.home {
+  &__hero {
+    background: linear-gradient(135deg, #000000 0%, var(--accent-color) 100%);
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+    border-bottom: 4px solid var(--accent-secondary);
+  }
+
+  &__hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 3rem;
+    margin: 0 0 1rem 0;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    font-size: 1.25rem;
+    margin: 0 0 2rem 0;
+    opacity: 0.9;
+  }
+
+  &__cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__cta-button {
+    padding: 0.75rem 2rem;
+    border-radius: 2px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+
+    &--primary {
+      background-color: var(--accent-secondary);
+      color: #000000;
+      border: 2px solid var(--accent-secondary);
+
+      &:hover {
+        background-color: var(--accent-secondary-hover);
+        border-color: var(--accent-secondary-hover);
+      }
+    }
+
+    &--secondary {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+
+      &:hover {
+        background-color: white;
+        color: #000000;
+      }
+    }
+  }
+
+  &__features {
+    padding: 4rem 2rem;
+    background-color: var(--bg-secondary);
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin: 0 0 3rem 0;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+
+  &__features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  &__feature {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--bg-primary);
+    border-radius: 2px;
+    border: 2px solid var(--border-color);
+    transition: border-color 0.2s ease;
+
+    &:hover {
+      border-color: var(--accent-color);
+    }
+  }
+
+  &__feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+  }
+
+  &__feature h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+  }
+
+  &__feature p {
+    margin: 0;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 768px) {
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__subtitle {
+      font-size: 1rem;
+    }
+  }
+}
+

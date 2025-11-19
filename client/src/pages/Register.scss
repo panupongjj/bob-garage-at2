@@ -1,0 +1,118 @@
+@use '../styles/variables' as *;
+
+.register {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  &__container {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  &__card {
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 2px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &__title {
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+    text-align: center;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+
+  &__subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    margin: 0 0 2rem 0;
+  }
+
+  &__error {
+    background-color: var(--error-bg);
+    color: var(--error-color);
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__label {
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  &__input {
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    border-radius: 2px;
+    font-size: 1rem;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent-color);
+    }
+  }
+
+  &__button {
+    padding: 0.75rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+
+    &:hover:not(:disabled) {
+      background-color: var(--accent-hover);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  &__footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--text-secondary);
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
