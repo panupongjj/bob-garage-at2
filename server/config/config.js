@@ -29,8 +29,8 @@ const config = {
     api_key: process.env.CLOUDINARY_API_KEY,
     api_secret: process.env.CLOUDINARY_API_SECRET,
     folder: "bobs-garage",
-    sub_folder_services: "bobs-garage/services",
-    sub_folder_staff: "bobs-garage/staff",
+    sub_folder_services: "services",
+    sub_folder_staff: "staff",
   },
 };
 

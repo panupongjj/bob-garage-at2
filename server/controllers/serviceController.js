@@ -21,7 +21,7 @@ const createService = async (req, res) => {
     // Upload image to Cloudinary if provided
     if (req.file) {
       try {
-        imageUrl = await uploadToCloudinary(req.file.buffer);
+        imageUrl = await uploadToCloudinary(req.file.buffer, "services");
       } catch (error) {
         console.error("Image upload error:", error);
         return res.status(500).json({ error: "Failed to upload image" });
@@ -57,7 +57,7 @@ const updateService = async (req, res) => {
     // Check if image changed (new file uploaded)
     if (req.file) {
       try {
-        imageUrl = await uploadToCloudinary(req.file.buffer);
+        imageUrl = await uploadToCloudinary(req.file.buffer, "services");
       } catch (error) {
         console.error("Image upload error:", error);
         return res.status(500).json({ error: "Failed to upload image" });
