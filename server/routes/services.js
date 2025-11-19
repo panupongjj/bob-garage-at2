@@ -16,8 +16,8 @@ router.post(
   "/",
   authenticate,
   adminOnly,
+  uploadSingle, // Move this BEFORE validate
   validate(createServiceSchema),
-  uploadSingle,
   serviceController.createService
 );
 router.put(
@@ -25,8 +25,8 @@ router.put(
   authenticate,
   adminOnly,
   validate(idParam, "params"),
+  uploadSingle, // Move this BEFORE validate
   validate(updateServiceSchema),
-  uploadSingle,
   serviceController.updateService
 );
 router.delete(

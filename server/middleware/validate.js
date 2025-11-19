@@ -1,13 +1,16 @@
 const validate = (schema, source = "body") => {
   return (req, res, next) => {
     const data = source === "params" ? req.params : req.body;
-    
+
     // Convert empty strings to undefined for optional fields
     const sanitizedData = {};
-    for (const [key, val] of Object.entries(data)) {
-      sanitizedData[key] = val === "" ? undefined : val;
+    // Ensure data is an object before iterating
+    if (data && typeof data === "object") {
+      for (const [key, val] of Object.entries(data)) {
+        sanitizedData[key] = val === "" ? undefined : val;
+      }
     }
-    
+
     const { error, value } = schema.validate(sanitizedData, {
       abortEarly: false,
       stripUnknown: true,
@@ -37,4 +40,3 @@ const validate = (schema, source = "body") => {
 };
 
 module.exports = validate;
-
