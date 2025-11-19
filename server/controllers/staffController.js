@@ -18,12 +18,6 @@ const createStaff = async (req, res) => {
     const { name, role, bio } = req.body;
     let imageUrl = null;
 
-    if (!name || !role || !bio) {
-      return res
-        .status(400)
-        .json({ error: "Name, role, and bio are required" });
-    }
-
     // Upload image to Cloudinary if provided
     if (req.file) {
       try {

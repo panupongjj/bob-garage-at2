@@ -22,10 +22,6 @@ const createSavedItem = async (req, res) => {
   try {
     const { serviceId } = req.body;
 
-    if (!serviceId) {
-      return res.status(400).json({ error: 'Service ID is required' });
-    }
-
     // Check if service exists
     const service = await Service.findByPk(serviceId);
     if (!service) {

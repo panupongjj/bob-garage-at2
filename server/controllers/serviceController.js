@@ -18,12 +18,6 @@ const createService = async (req, res) => {
     const { name, description, price } = req.body;
     let imageUrl = null;
 
-    if (!name || !description || price === undefined) {
-      return res
-        .status(400)
-        .json({ error: "Name, description, and price are required" });
-    }
-
     // Upload image to Cloudinary if provided
     if (req.file) {
       try {
